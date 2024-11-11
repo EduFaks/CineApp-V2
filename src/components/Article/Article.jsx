@@ -1,38 +1,56 @@
 const Article = ({ title, text, tags, image }) => {
   return ( 
-  <div 
-  className="p-5 bg-gray-200 dark:bg-dark-200 sm:rounded-xl sm:shadow-xl sm:dark:shadow-gray-900 sm:dark:hover:shadow-gray-800 sm:hover:shadow-2xl flex flex-col items-center gap-2">
-    { image ? <div className="relative max-w-xl mx-auto mt-5">
-      <img className="h-64 w-full object-cover rounded-md" src={image} alt={title}/>
-      <div className="absolute inset-0 bg-black opacity-60 rounded-md"></div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h2 className="text-white text-center text-xl font-bold">{title}</h2>
+    <div className="card group overflow-hidden">
+      {image ? (
+        <div className="relative h-64 overflow-hidden">
+          <img 
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
+            src={image} 
+            alt={title}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent">
+            <div className="absolute bottom-0 p-6">
+              <h2 className="text-white text-xl font-bold text-shadow">
+                {title}
+              </h2>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="p-6">
+          <h2 className="text-xl font-bold text-emerald-400">
+            {title}
+          </h2>
+        </div>
+      )}
+      
+      <div className="p-6 pt-4 space-y-4">
+        <div className="flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span 
+              key={tag} 
+              className="px-3 py-1 text-xs font-medium rounded-full 
+              bg-emerald-500/10 text-emerald-400 
+              transition-all duration-200 hover:bg-emerald-500/20"
+            >
+              {tag.toUpperCase()}
+            </span>
+          ))}
+        </div>
+
+        <div className="space-y-2">
+          {text.map((content, index) => (
+            <p 
+              key={index} 
+              className="text-gray-300 leading-relaxed"
+            >
+              {content}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
-    :
-    <h2 className="text-black text-center text-xl font-bold">{title}</h2>}
-    
-    <div className="w-full pr-5 flex gap-2 justify-center mt-3">
-      {
-        tags.map(tag => 
-        <span 
-        key={tag} 
-        className="px-4 py-1 cursor-default bg-brand-100 sm:hover:scale-110 hover:bg-brand-200 dark:bg-dark-100 rounded-full text-gray-200 text-xs font-bold uppercase">
-        {tag}
-        </span>)
-      }
-    </div>
-    <div className="flex flex-col gap-1">
-      {
-        text.map((content, index) => 
-        <span 
-        key={index} 
-        className="dark:text-gray-400">
-        {content}
-        </span>)
-      }
-    </div>
-  </div>
-)}
+  );
+}
 
-export default Article
+export default Article;

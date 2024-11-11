@@ -35,7 +35,7 @@ function Contato() {
             <form className="flex flex-col w-2/4 dark:text-white" onSubmit={sendEmail}>
                 <label htmlFor="nome">Nome:</label>
                 <input 
-                    className="mb-4 p-2 dark:text-black shadow-md rounded-md" 
+                    className="card p-4 text-center transition-all duration-300 hover:scale-101" 
                     type="text" 
                     name="Nome" 
                     id="nome"
@@ -44,7 +44,7 @@ function Contato() {
                     />
                 <label htmlFor="email">E-mail:</label>
                 <input 
-                    className="mb-4 p-2 dark:text-black shadow-md rounded-md" 
+                    className="card p-4 text-center transition-all duration-300 hover:scale-101" 
                     type="text" 
                     name="Email" 
                     value={email}
@@ -55,12 +55,13 @@ function Contato() {
                     name="Mensagem" 
                     id="mensagem"
                     value={mensagem}
-                    className="dark:text-black p-2 rounded-md shadow-md"
+                    className="card p-4 text-center transition-all duration-300 hover:scale-101"
                     onChange={(e) => setMensagem(e.target.value)}
                     />
                 <div className="flex justify-center">
                 <button 
-                    className="mt-5 shadow-md w-1/4 text-center p-3 dark:bg-white text-black" 
+                    style={{marginTop: '20px'}}
+                    className="card p-2 text-center transition-all duration-300 hover:scale-101" 
                     value="Enviar"
                     type="submit">Enviar</button>
                 </div>
