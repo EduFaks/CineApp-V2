@@ -1,10 +1,11 @@
 # CineApp-V2
 
-Este projeto é o Checkpoint 3 para a disciplina de Desenvolvimento Web na universidade.
+Este projeto é o Checkpoint 3 para a disciplina de Desenvolvimento Web na FIAP.
 
 ## Descrição
 
 CineApp é uma aplicação web que permite aos usuários explorar uma lista de filmes, visualizar detalhes de cada filme e obter informações adicionais. A aplicação também possui funcionalidades de contato e sobre.
+Base: https://github.com/caiooliveira-tech/CineApp
 
 ## Tecnologias Utilizadas
 
